@@ -100,10 +100,16 @@ public abstract class Operation {
 		this.date = date;
 	}
 
+	/**
+	 * @return compte, type Compte
+	 */
 	public Compte getCompte() {
 		return compte;
 	}
 
+	/**
+	 * @param compte
+	 */
 	public void setCompte(Compte compte) {
 		this.compte = compte;
 	}

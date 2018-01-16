@@ -12,6 +12,11 @@ public class LivretA extends Compte {
 	public LivretA() {
 		super();
 	}
+	
+	public LivretA(Integer numero, Double solde, Double taux) {
+		super(numero, solde);
+		this.taux = taux;
+	}
 
 	public Double getTaux() {
 		return taux;

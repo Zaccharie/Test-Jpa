@@ -42,6 +42,12 @@ public abstract class Compte {
 		operations = new HashSet<Operation>();
 	}
 	
+	public Compte(Integer numero, Double solde) {
+		operations = new HashSet<Operation>();
+		this.numero = numero;
+		this.solde = solde;
+	}
+	
 	//getters and setters
 
 	/**

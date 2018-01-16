@@ -22,6 +22,13 @@ public class Adresse {
 		
 	}
 	
+	public Adresse(Integer numero, String rue, Integer codePostal, String ville) {
+		this.numero = numero;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+	}
+	
 	//getters and setters
 	public Integer getNumero() {
 		return numero;

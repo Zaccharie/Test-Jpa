@@ -58,6 +58,13 @@ public class Client {
 		comptes = new HashSet<Compte>();
 	}
 	
+	public Client(String nom, String prenom, LocalDate dateNaissance) {
+		comptes = new HashSet<Compte>();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.dateNaissance = dateNaissance;
+	}
+	
 	//getters and setters
 	
 	/**

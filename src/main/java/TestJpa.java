@@ -70,26 +70,16 @@ public class TestJpa {
 		
 		//Creation d'un client et de son premier compte, d'une banque ainsi que d'une operation
 		try {
-			
 			//Objet Client
-			Client cli1 = new Client();
-			cli1.setNom("Meddah");
-			cli1.setPrenom("Zaccharie");
-			cli1.setDateNaissance(LocalDate.of(1991, 07, 21));
-			
+			Client cli1 = new Client("Meddah","Zaccharie", LocalDate.of(1991, 07, 20));
+
 			//Objet Adresse
-			Adresse adr1 = new Adresse();
-			adr1.setNumero(8);
-			adr1.setCodePostal(67000);
-			adr1.setRue("rue de l'outre");
-			adr1.setVille("Strasbourg");
-			
+			Adresse adr1 = new Adresse(8,"rue de l'outre",67000,"Strasbourg");
+
 			cli1.setAdresse(adr1);
 			
 			//Objet compte LivretA
-			LivretA livA = new LivretA();
-			livA.setNumero(1245365);
-			livA.setSolde(2000.00);
+			LivretA livA = new LivretA(12345, 2000.0, 1.5);
 			
 			//Objet compte AssuranceVie
 			AssuranceVie assurV = new AssuranceVie();
@@ -115,7 +105,7 @@ public class TestJpa {
 			op1.setBeneficiaire("Le Pape");
 			livA.getOperations().add(op1);
 			
-			
+			//persist
 			emB.persist(op1);
 			emB.persist(ban1);
 			emB.persist(assurV);
@@ -132,9 +122,11 @@ public class TestJpa {
 			emB.close();
 			entityManagerFactoryBan.close();
 		}
+		finally {
+			emB.close();
+			entityManagerFactoryBan.close();	
+		}
 
-		emB.close();
-		entityManagerFactoryBan.close();
 	}	
 
 }
